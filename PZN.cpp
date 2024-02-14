@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <iostream>
 #include <cmath>
+#include <set>
 using namespace std;
 
 int calculate_PZN(int PZN)
@@ -32,12 +33,27 @@ int replace_digit(int num, int x, int y)
     return stoi(num_str);
 }
 
+set<int> get_digits(int num)
+{
+    set<int> digits = {};
+    int d;
+    while (num > 0)
+    {
+        d = num % 10;
+        digits.insert(d);
+        num /= 10;
+    }
+    return digits;
+}
+
 int main()
 {
     int number = 187377;
     int test_PZN = calculate_PZN(number);
 
-    for (int i = 0; i < 10; i++)
+    set<int> digits = get_digits(number);
+
+    for (auto i : digits)
         for (int j = 0; j < 10; j++)
         {
             int new_number = replace_digit(number, i, j);
