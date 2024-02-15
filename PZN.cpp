@@ -46,6 +46,20 @@ set<int> get_digits(int num)
     return digits;
 }
 
+set<int> get_divisors(int num)
+{
+    set<int> divisors = {};
+    int d;
+    for (int i = 1; i < num + 1; i++)
+    {
+        if (num % i == 0)
+        {
+            divisors.insert(i);
+        }
+    }
+    return divisors;
+}
+
 int main()
 {
     int number = 187377;
