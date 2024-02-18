@@ -1,4 +1,5 @@
 #include <algorithm>
+#include "gcd.h"
 #include <iostream>
 #include <cmath>
 #include <set>
@@ -76,5 +77,9 @@ int main()
                 cout << i << " " << j << endl;
             }
         }
+
+    long x = 54, y = 24;
+    cout << "The gcd of " << x << " and " << y << " is "
+         << gcd(x, y) << endl;
     return 0;
 }
