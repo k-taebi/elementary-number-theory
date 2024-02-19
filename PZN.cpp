@@ -81,5 +81,14 @@ int main()
     long x = 54, y = 24;
     cout << "The gcd of " << x << " and " << y << " is "
          << gcd(x, y) << endl;
+
+    set<int> divisors_x, divisors_y, intersect;
+
+    divisors_x = get_divisors(x);
+    divisors_y = get_divisors(y);
+    set_intersection(divisors_x.begin(), divisors_x.end(),
+                     divisors_y.begin(), divisors_y.end(),
+                     std::inserter(intersect, intersect.begin()));
+    int max_elem = *intersect.rbegin();
+    cout << "The gcd of " << x << " and " << y << " still is " << max_elem << endl;
     return 0;
-}
