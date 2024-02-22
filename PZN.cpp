@@ -92,3 +92,4 @@ int main()
     int max_elem = *intersect.rbegin();
     cout << "The gcd of " << x << " and " << y << " still is " << max_elem << endl;
     return 0;
+}
